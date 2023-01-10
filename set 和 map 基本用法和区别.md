@@ -1,5 +1,5 @@
 
-
+```js
 let str = 'aaabbbcccdddeee'
 
 const arr = str.split('')// 字符串转数组
@@ -39,8 +39,6 @@ map.delete(1)// 类似 object 的delete 语法 var o = {key : 111};   delete o[k
 console.log(map.has(1))
 
 
-
-
 console.log(map.get(1), '<<<--map')// map 和 object 很类似, 不过map 有size object 没
 
 console.log(map.keys(), map.values(), map.entries(), '<<<===map') // 以上全部都是map 的迭代器, 只能迭代取值, 也可以转成数组
@@ -48,3 +46,5 @@ console.log(map.keys(), map.values(), map.entries(), '<<<===map') // 以上全�
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Map
 
 // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+```
