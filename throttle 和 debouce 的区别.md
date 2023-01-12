@@ -8,7 +8,8 @@ throttle(func, wait, options)：创建并返回一个像节流阀一样的函数
 简述原理:
 ```
 debounce:第一次触发后，进行倒计wait毫秒，如果倒计时过程中有其他触发，则重置倒计时；否则执行。用它来丢弃一些重复的密集操作，直到流量减慢。
-throttle:第一次触发后先执行fn（lodash可以通过{leading: false}来取消），然后wait ms后再次执行，在单位wait毫秒内的所有重复触发都被抛弃。即如果有连续不断的触发，每wait ms执行fn一次，用在每隔一定间隔执行回调的场景。
+throttle:第一次触发后先执行fn（lodash可以通过{leading: false}来取消），然后wait ms后再次执行，在单位wait毫秒内的所有重复触发都被抛弃。
+即如果有连续不断的触发，每wait ms执行fn一次，用在每隔一定间隔执行回调的场景。
 ```
 
 也就是说, debounce 在wait倒计中没有触发就会在wait后执行一次, 如果倒计时中间还有触发,就清空倒计时. throttle 则是按wait 时间间隔抽样执行,抽样时间间隔内只能执行一次.
