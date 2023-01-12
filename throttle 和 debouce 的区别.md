@@ -12,7 +12,7 @@ throttle:第一次触发后先执行fn（lodash可以通过{leading: false}来�
 即如果有连续不断的触发，每wait ms执行fn一次，用在每隔一定间隔执行回调的场景。
 ```
 
-也就是说, debounce 在wait倒计中没有触发就会在wait后执行一次, 如果倒计时中间还有触发,就清空倒计时. throttle 则是按wait 时间间隔抽样执行,抽样时间间隔内只能执行一次.
+也就是说, debounce 在wait倒计中没有触发就会在wait后执行一次, 如果倒计时中间还有触发,就清空倒计时. throttle 则是按wait 时间间隔抽样执行,```抽样时间间隔内只能执行一次```.
 
 
 ```js
