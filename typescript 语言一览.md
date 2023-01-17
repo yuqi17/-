@@ -91,3 +91,22 @@ function show(style: IStyle = { width: 200, height: 300 }): void {
 
 [type 和 interface 的区别](https://juejin.cn/post/6844903749501059085)
 
+#### typescript 比较新的基本类型
+1. 下面的代码可以保证any 类型的编译时期不报警告, object 则不行
+```js
+let notSure: any = 4;
+notSure.ifItExists(); // okay, ifItExists might exist at runtime
+notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
+
+let prettySure: Object = 4;
+prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
+```
+
+2. void 跟 any 正好相反, void 类型变量,只能有undefiend 和 null, 通常不这么设置
+3. undefined和null两者各自有自己的类型分别叫做undefined和null。 和 void相似，它们的本身的类型用处不是很大
+4. never never类型是任何类型的子类型; 即使 any也不可以赋值给never;
+![image](https://user-images.githubusercontent.com/10356819/212883029-b117045c-fbd7-4dca-a2bd-f623a920ac2f.png)
+
+#### [高级类型](https://www.tslang.cn/docs/handbook/advanced-types.html)
+
+
