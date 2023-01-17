@@ -53,4 +53,32 @@ function render(node:Node){
 }
 
 render({name:'1x', prop:1} as Node)// 这里用as Node 防止编译器报警告
+
+//========= 如果要给type 或者 interface 默认值可以这样
+
+// 这种只适合一个参数的情况
+function Employee({
+  name = 'Alice',
+  age = 30,
+  country = 'Austria',
+}: EmployeeProps) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <h2>{age}</h2>
+      <h2>{country}</h2>
+    </div>
+  );
+}
+
+//或者
+
+interface IStyle {
+  width: number;
+  height: number;
+}
+
+function show(style: IStyle = { width: 200, height: 300 }): void {
+  console.log(style)
+}
 ```
