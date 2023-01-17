@@ -54,6 +54,12 @@ function render(node:Node){
 
 render({name:'1x', prop:1} as Node)// 这里用as Node 防止编译器报警告
 
+type Name = { 
+  name: string; 
+}
+type User = Name & { age: number  };// 多类型叠加,跟interface 不同, interface 用的是extends
+
+
 //========= 如果要给type 或者 interface 默认值可以这样
 
 // 这种只适合一个参数的情况
@@ -82,3 +88,6 @@ function show(style: IStyle = { width: 200, height: 300 }): void {
   console.log(style)
 }
 ```
+
+[type 和 interface 的区别](https://juejin.cn/post/6844903749501059085)
+
