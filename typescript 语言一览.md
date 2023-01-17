@@ -1,6 +1,12 @@
 #### typescript 的好处, 可以让代码更健壮,更精确, 规范, 很多问题在编译过程中就能给出提示, 可以简化逻辑,可以让代码可读性更高; 它是js的超集, 没有js 轻省, 易用;
 
-typescript 中的一些奇特的符号:
+对于js 开发者来说, 一般除了图片上红色框需要重点花时间去学习一下, 其他的是比较容易理解的
+![image](https://user-images.githubusercontent.com/10356819/212884178-74779586-1b55-4652-aa3a-250f6ed83915.png)
+
+[图片中的学习目录](https://www.tslang.cn/docs/handbook/basic-types.html)
+
+
+#### typescript 中的一些奇特的符号:
 
 ![image](https://user-images.githubusercontent.com/10356819/212843994-422bdfc5-1228-4490-a345-da40a8ef9c33.png)
 
