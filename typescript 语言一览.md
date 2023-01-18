@@ -147,5 +147,8 @@ test({} as House);
 ```
 - Omit 和 Exclude 的区别, Omit 针对的是type, Exclude 针对的是联合类型
 
-#### [typescript 关键字](https://juejin.cn/post/7034035155434110990) 比如 keyof infer enum
+#### 关键字总结
+- [typescript 关键字 参考1](https://juejin.cn/post/7034035155434110990) 比如 keyof infer enum
+- [参考2](https://segmentfault.com/a/1190000042030985)
+- is instanceof as in; declare export namespace module class interface type extends implement; (private #x) public proctected;
 
