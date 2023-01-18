@@ -125,6 +125,11 @@ prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object
     }
     console.log(typeof arr, typeof tuple, typeof A)
  ```
+ 
+ unknown 和 any 的区别:
+ 
+ ![image](https://user-images.githubusercontent.com/10356819/213106964-9c6113a9-335d-433d-ae36-f4066b6e8bb1.png)
+
 
 ![image](https://user-images.githubusercontent.com/10356819/212883029-b117045c-fbd7-4dca-a2bd-f623a920ac2f.png)
 
