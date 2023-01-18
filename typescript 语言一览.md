@@ -111,6 +111,21 @@ prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object
 2. void 跟 any 正好相反, void 类型变量,只能有undefiend 和 null, 通常不这么设置
 3. undefined和null两者各自有自己的类型分别叫做undefined和null。 和 void相似，它们的本身的类型用处不是很大
 4. never never类型是任何类型的子类型; 即使 any也不可以赋值给never;
+5. 元组 : const tuple:[number,string, object]= [1,"2",{}]; 跟数组最大区别, 数组可以无限扩张, 元组只能是一组数据;
+6. 枚举 : enum A{  T1, T2 }
+7. 其他的类型es6 已经有的boolean, string, number, object, function, undefinded, symbol 共7种基本类型
+8. 所以ts 共有 7 + 4 (any, void, null, never)= 11  种基本类型,
+ 注意:  数组, 元组, 枚举在ts 里面都是对象类型
+ ```ts 
+    const arr = [];
+    const tuple:[number,string, object]= [1,"2",{}];
+    enum A {
+        T1,
+        T2
+    }
+    console.log(typeof arr, typeof tuple, typeof A)
+ ```
+
 ![image](https://user-images.githubusercontent.com/10356819/212883029-b117045c-fbd7-4dca-a2bd-f623a920ac2f.png)
 
 #### [高级类型](https://www.tslang.cn/docs/handbook/advanced-types.html)
@@ -131,4 +146,6 @@ function test(x:HouseType){
 test({} as House);
 ```
 - Omit 和 Exclude 的区别, Omit 针对的是type, Exclude 针对的是联合类型
+
+#### [typescript 关键字](https://juejin.cn/post/7034035155434110990) 比如 keyof infer enum
 
