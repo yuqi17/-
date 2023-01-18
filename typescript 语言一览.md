@@ -115,7 +115,7 @@ prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object
 
 #### [高级类型](https://www.tslang.cn/docs/handbook/advanced-types.html)
 - 所谓的联合类型就是 A | B | C, 多选一, 所谓交叉类型, 就是 A ?? B 或者 接口 A extends B, 这样可以符合一个新的类型或接口
-- 下面演示Required 和 Partial 的理解 (这些也被叫 [工具类型](https://juejin.cn/post/6844903981521567752))
+- 下面演示Required 和 Partial 的理解 (这些也被叫 [工具类型](https://juejin.cn/post/6844903981521567752), 它们的作用是约束类型定义, 而不是使用的时候才去检查,是一种更高层次)
 ```
 type House = {
     address:string,
