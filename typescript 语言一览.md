@@ -11,7 +11,7 @@
 ![image](https://user-images.githubusercontent.com/10356819/212843994-422bdfc5-1228-4490-a345-da40a8ef9c33.png)
 
 以下是根据上面图片做的一些代码:
-```js
+```ts
 const a = 0;
 const b = a || "xxx"
 const c = a ?? 'yyy' // 空值合并运算符
