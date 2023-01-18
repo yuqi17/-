@@ -157,3 +157,5 @@ test({} as House);
 - [参考2](https://segmentfault.com/a/1190000042030985)
 - is instanceof as in; declare export namespace module class interface type extends implement; (private #x) public proctected;
 
+#### [模块和命名空间不混用](https://www.tslang.cn/docs/handbook/modules.html) module 用于申明文件(xx.d.ts) 中,用三斜杠指令引入就可以使用第三方库(当然这个一般由编译器来完成)
+
