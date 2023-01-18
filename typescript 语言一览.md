@@ -114,5 +114,21 @@ prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object
 ![image](https://user-images.githubusercontent.com/10356819/212883029-b117045c-fbd7-4dca-a2bd-f623a920ac2f.png)
 
 #### [高级类型](https://www.tslang.cn/docs/handbook/advanced-types.html)
+- 所谓的联合类型就是 A | B | C, 多选一, 所谓交叉类型, 就是 A ?? B 或者 接口 A extends B, 这样可以符合一个新的类型或接口
+- 下面演示Required 和 Partial 的理解 (这些也被叫 [工具类型](https://juejin.cn/post/6844903981521567752))
+```
+type House = {
+    address:string,
+    name?:string
+}
 
+type HouseType = Partial<House>// 这个地方如果换成 Required 下面就会编译报错
+
+function test(x:HouseType){
+    console.log(x)
+}
+
+test({} as House);
+```
+- Omit 和 Exclude 的区别, Omit 针对的是type, Exclude 针对的是联合类型
 
