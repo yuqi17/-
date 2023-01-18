@@ -113,8 +113,8 @@ prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object
 4. never never类型是任何类型的子类型; 即使 any也不可以赋值给never;
 5. 元组 : const tuple:[number,string, object]= [1,"2",{}]; 跟数组最大区别, 数组可以无限扩张, 元组只能是一组数据;
 6. 枚举 : enum A{  T1, T2 }
-7. 其他的类型es6 已经有的boolean, string, number, object, function, undefinded, symbol 共7种基本类型
-8. 所以ts 共有 7 + 4 (any, void, null, never)= 11  种基本类型,
+7. 其他的类型es6 已经有的boolean, string, number, object, function, undefinded, symbol 共 7 种基本类型
+8. 所以ts 共有 7 + 5 (any, void, null, never, unknown)= 12  种基本类型,其中ts 的5种是必须要赋初始值的,仅仅具有代码意义上的类型
  注意:  数组, 元组, 枚举在ts 里面都是对象类型
  ```ts 
     const arr = [];
