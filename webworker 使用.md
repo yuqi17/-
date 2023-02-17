@@ -5,3 +5,4 @@
 #### [webworker import 第三方 参考2](https://juejin.cn/post/6844903935908675598)
 
 - 2. Dedicated Worker, Service Worker, Shared Worker
+- 3. service worker [http请求也可以缓存](https://www.jianshu.com/p/0121d1793d01) 不过,这个是需要把缓存的的请求先请求一遍才行, 最后才会变快, 甚至离线访问.
