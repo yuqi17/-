@@ -12,8 +12,10 @@
   Dedicated Worker: accessible to a single script. 
   Shared Worker: can be accessed by multiple scripts. Service Worker: serves as a  proxy between client and server
   
-  A shared worker can work with multiple connections. It posts messages to ports to allow communication between various scripts.
-  A dedicated worker on the other hand is `simply tied to its main connection and cannot post messages to other scripts (workers).
+  A shared worker can work with multiple connections. It posts messages to ports to allow communication 
+  between various scripts.
+  A dedicated worker on the other hand is `simply tied to its main connection and cannot post messages to 
+  other scripts (workers).
   ```
   
 ### [create-react-app 中 registerServiceWorker.js 的使用](https://blog.csdn.net/u010565037/article/details/102916848)
