@@ -130,3 +130,14 @@ async function test2() {
 
 }
 ```
+
+### WEBSQL 支持的浏览器不多,适合客户端大量数据的存储,慎用
+```js
+    var db = openDatabase(' mydatabase ', '1.0', 'Test DB', 2 * 1024 * 1024); 
+
+   db.transaction(function (tx) { 
+      tx.executeSql('CREATE TABLE IF NOT EXISTS t1 (id unique, log)');  
+      tx.executeSql('INSERT INTO t1 (id, log) VALUES (1, "foobar")');  
+      tx.executeSql('INSERT INTO t1 (id, log) VALUES (2, "logmsg")');  
+   });
+```
