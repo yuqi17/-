@@ -8,10 +8,16 @@
   
   ```
   
-  There are mainly 3 types of workers : Dedicated Worker: accessible to a single script. Shared Worker: can be accessed by multiple scripts. Service Worker: serves as a  proxy between client and server
+  There are mainly 3 types of workers :
+  Dedicated Worker: accessible to a single script. 
+  Shared Worker: can be accessed by multiple scripts. Service Worker: serves as a  proxy between client and server
   
-  A shared worker can work with multiple connections. It posts messages to ports to allow communication between various scripts. A dedicated worker on the other hand is `simply tied to its main connection and cannot post messages to other scripts (workers).
+  A shared worker can work with multiple connections. It posts messages to ports to allow communication between various scripts.
+  A dedicated worker on the other hand is `simply tied to its main connection and cannot post messages to other scripts (workers).
   ```
+  
+### [create-react-app 中 registerServiceWorker.js 的使用](https://blog.csdn.net/u010565037/article/details/102916848)
+[PWA 图标等相关的manifest.json配置](https://blog.csdn.net/zemprogram/article/details/102989404)
 
 - 3. 缓存不同于存储, 缓存一定是先要请求一遍才行, 而存储则可以利用请求的多线程偷偷的进行存储.
 
