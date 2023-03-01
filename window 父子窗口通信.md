@@ -45,7 +45,7 @@
 <script>
     function test() {
         console.log('test...')
-        window.opener.postMessage({ msg: 'hahah' })
+        window.opener.postMessage({ msg: 'hahah' });// 用opener 就不会向子窗口本身发送消息
     }
 
     window.addEventListener('message', e => {
