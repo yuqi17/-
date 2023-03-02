@@ -1,5 +1,7 @@
 
-### 1. 直接用window.open 和 window.opener.postMessage 
+### 1. localStorage 和 其监听器; indexdb 也是相同原理;
+
+### 2. 直接用window.open 和 window.opener.postMessage 
 
 主窗口:
 ```html
@@ -55,3 +57,7 @@
 
 </html>
 ```
+
+### 3.  BroadcastChannel
+
+### 4.  SharedWorker
