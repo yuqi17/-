@@ -60,5 +60,17 @@
 
 ### 3.  BroadcastChannel
 [参考](https://juejin.cn/post/6844903811228663815) 比window.postMessage 好的一点是可以在多个同源窗口之间广播.要注意使用的是同一个对象.
+```js
+// A.html
+const channel = new BroadcastChannel('tabs')
+channel.onmessage = evt => {
+// evt.data
+}
 
-### 4.  SharedWorker
+// B.html
+const channel = new BroadcastChannel('tabs')
+channel.postMessage('hello')
+```
+
+### 4.  SharedWorker 不是很常用
+[各种跨页通信的比较](https://zhuanlan.zhihu.com/p/29368435)
