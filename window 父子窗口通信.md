@@ -59,5 +59,6 @@
 ```
 
 ### 3.  BroadcastChannel
+[参考](https://juejin.cn/post/6844903811228663815) 比window.postMessage 好的一点是可以在多个同源窗口之间广播.要注意使用的是同一个对象.
 
 ### 4.  SharedWorker
