@@ -16,7 +16,7 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 <h1>Welcome to nginx!</h1>
 
 <script>
-    window.frames[0].postMessage('hello, world', '*');
+    window.frames[0].postMessage('hello, world', '*');// * 这个参数必须设置不然发不出去; 设置有两个值: *  和  ```http://127.0.0.1:3000``` 必须把协议IP端口都写清楚 可以保证发送成功
 </script>
 
 <body>
@@ -25,7 +25,7 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 </html>
 ```
 
-### iframe 内嵌页面
+### iframe 内嵌页面 http://127.0.0.1:3000
 ```html
 
 <!DOCTYPE html>
@@ -41,15 +41,21 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
         console.log(e.target.contentDocument || e.target.contentWindow.document)
     }
 
-    window.addEventListener('message', (e) => {
-        alert('111')
+    window.addEventListener('message', (e) => {// 可以在这个地方过滤一下, 不是所有的容器页面都可以发信息过来
+       console.log(e)// isTrusted: true, data: 'hi', origin: 'http://127.0.0.1:8080', lastEventId: '', source: Window, // 这个打印也只有在容器页面可以打印, 如果单独打开容器里面的页面是不会打印的
     })
 </script>
 
 <body>
     I am a page in iframe
 </body>
-
-
 </html>
 ```
+
+####  总结
+所以postMessage 通信的必要条件是: 通信对象之间必须存在 引用的关系, 比如 window 可以索引到 iframe, 子窗口. 
+1. 容器向iframe 传递消息 window.iframes[0] 或者其它办法只要能得到 iframe 的引用就可以给iframe 发消息, 注意要等iframe 完全加载好再用, 否则会空指针
+2. iframe 中的页面向容器发消息  window.postMessage('88888', "*"), 直接用window 就可以了, 因为此时的iframe 和 容器页面在同一个 window 里面.
+3. 监听message 可以 通过 e.origin 过滤其它的域名, e.data 获得传递的数据, 数据可以是任意的js类型
+
+
