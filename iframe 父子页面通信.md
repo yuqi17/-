@@ -1,4 +1,10 @@
 
+### 跨域的情况下, 下面的代码是无法访问得到结果的, 即便设置了服务器的跨域也没用; postmessage, document.domain = '共同主域' 
+```
+var doc = document.getElementById("myFrame").contentDocument || document.getElementById("myFrame").contentWindow.document;
+```
+
+
 ### 父页面 http://127.0.0.1:8080/
 ```html
 
