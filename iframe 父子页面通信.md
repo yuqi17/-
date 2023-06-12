@@ -58,7 +58,7 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 </html>
 ```
 
-#### iframe 高度自适应不出现滚动条
+#### iframe 高度自适应不出现滚动条(下面的子页面的两个按钮可以完全去掉, ResizeObserver 可以完全自动的发送高度给父页面)
 ##### 父页面
 ```html
     <!DOCTYPE html>
