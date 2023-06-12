@@ -55,7 +55,8 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 ####  总结
 所以postMessage 通信的必要条件是: 通信对象之间必须存在 引用的关系, 比如 window 可以索引到 iframe, 子窗口. 
 1. 容器向iframe 传递消息 window.iframes[0] 或者其它办法只要能得到 iframe 的引用就可以给iframe 发消息, 注意要等iframe 完全加载好再用, 否则会空指针
-2. iframe 中的页面向容器发消息  window.postMessage('88888', "*"), 直接用window 就可以了, 因为此时的iframe 和 容器页面在同一个 window 里面.
+2. iframe 中的页面向容器发消息  window.top.postMessage(document.documentElement.scrollHeight, "*")    或者  window.parent.postMessage(document.documentElement.scrollHeight, "*") 
 3. 监听message 可以 通过 e.origin 过滤其它的域名, e.data 获得传递的数据, 数据可以是任意的js类型
+4. 容器 还是 iframe 直接用window.addEventListener('message',xxx)
 
 
