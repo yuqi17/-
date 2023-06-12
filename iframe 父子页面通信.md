@@ -58,6 +58,97 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 </html>
 ```
 
+#### iframe 高度自适应不出现滚动条
+##### 父页面
+```html
+    <!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<script>
+   function load(){
+      window.frames[0].postMessage('hello, world', "*");
+   }
+   
+	window.addEventListener('message', (e)=>{
+		document.getElementById('iframe').style.height = `${e.data}px`
+	});
+</script>
+
+<body>
+    <iframe id='iframe' src="http://127.0.0.1:3000/" onload="load()" />
+</body>
+</html>
+```
+
+
+##### 子页面
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #test {
+            height: 600px;
+        }
+    </style>
+</head>
+<script>
+    function send(e) {
+        // window.top.postMessage(document.documentElement.scrollHeight, "*")
+        window.parent.postMessage(document.documentElement.scrollHeight, "*")
+    }
+
+    function change() {
+        document.getElementById('test').style.height = '700px'
+    }
+
+    window.addEventListener('message', (e) => {
+        console.log(e, '<<<====')
+    })
+
+
+    function onload() {
+        // 创建观察者对象
+        var observer = new ResizeObserver(function (entries) {
+            entries.forEach(function (entry) {
+                window.parent.postMessage(document.documentElement.scrollHeight, "*")
+                console.log(entry.contentRect.height, '*****')
+            });
+        });
+        // 观察指定的 DOM 元素
+        var target = document.getElementById('test');
+        observer.observe(document.documentElement);
+    }
+
+</script>
+
+<body onload="onload()">
+    <div id="test">
+        <button onclick="send()">send message to container page</button>
+        <button onclick="change()">高度变成 700px</button>
+    </div>
+</body>
+
+
+</html>
+```
+
 ####  总结
 所以postMessage 通信的必要条件是: 通信对象之间必须存在 引用的关系, 比如 window 可以索引到 iframe, 子窗口. 
 1. 容器向iframe 传递消息 window.iframes[0] 或者其它办法只要能得到 iframe 的引用就可以给iframe 发消息, 注意要等iframe 完全加载好再用, 否则会空指针
