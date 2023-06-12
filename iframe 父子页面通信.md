@@ -155,5 +155,20 @@ working. Further configuration is required.</p>
 2. iframe 中的页面向容器发消息  window.top.postMessage(document.documentElement.scrollHeight, "*")    或者  window.parent.postMessage(document.documentElement.scrollHeight, "*") 
 3. 监听message 可以 通过 e.origin 过滤其它的域名, e.data 获得传递的数据, 数据可以是任意的js类型
 4. 容器 还是 iframe 直接用window.addEventListener('message',xxx)
+#### iframe 自适应核心代码
+```js
+	// iframe 页面
+        var observer = new ResizeObserver(function (entries) {
+            entries.forEach(function (entry) {
+                window.parent.postMessage(document.documentElement.scrollHeight, "*")
+            });
+        });
+        observer.observe(document.documentElement);
+	
+	
+	window.addEventListener('message', (e)=>{
+		document.getElementById('iframe').style.height = `${e.data}px`
+	});
 
+```
 
