@@ -28,7 +28,7 @@
 
 ##### 2. once:true 这个比较好理解就是触发一次之后就失效
 
-##### 3. passive 被动的, 用来优化手机端的滚动
+##### 3. passive:true 用来优化手机端的滚动 告诉浏览器不调用 preventDefault 函数来阻止事件事件行为, 因为执行默认行为需要时间, 这样就可以避免白等的时间而产生的卡顿
 ```html
 <!DOCTYPE html>
 <html lang="en">
