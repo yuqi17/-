@@ -3,12 +3,18 @@
 
 1. var style = window.getComputedStyle(el); 这可以活得元素最终的样式
 2. 基于1 返回的对象获得具体的样式: var scrolling = style.getPropertyValue('-webkit-overflow-scrolling');
-3. 用defineProperty的办法监听get 来做测试 ```js
+3. 用defineProperty的办法监听get 来做测试
+ ```js
     Object.defineProperty({}, 'passive', {
 			get: function() {
 				supportsPassiveOption = true;
 			}
-		});```
+		});
+  ```
+
+4. inobounce.enable() 在ios 上是禁用了ios的弹簧效果, 但是如果有iframe 则会导致划不动. 最终解决方案: html{ overscroll-behavior:none; }
+
+
 
 ```js
 /*! iNoBounce - v0.2.0
